@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# Environment Variables (SECRETS - DO NOT COMMIT)
+.env
+
+# Docker Database Data (DO NOT COMMIT)
+postgres_data/
+
+# OS Junk
+.DS_Store
+Thumbs.db
+
+# IDE Settings
+.vscode/
+.idea/

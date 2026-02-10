@@ -23,4 +23,5 @@ Thumbs.db
 
 # IDE Settings
 .vscode/
-.idea/
+.idea/.python-version
+.python-version

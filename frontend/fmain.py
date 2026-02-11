@@ -188,7 +188,8 @@ if not st.session_state.token:
 else:
     # 🏠 DASHBOARD SCREEN
     with st.sidebar:
-        st.title("Navigation")
+        st.title("Navigation"):
+        st.sidebar.image("https://img.icons8.com/ios-filled/100/8b0000/blood-drop.png", width=50)
         
         # DYNAMIC MENU: Only show Admin Panel if user is Admin
         options = ["Book a Room", "My Bookings"]
@@ -240,12 +241,25 @@ else:
         bookings = fetch_my_bookings()
         if bookings:
             df = pd.DataFrame(bookings)
-            # Filter columns nicely
             cols_to_show = ["resource_id", "start_time", "end_time", "status"]
             valid_cols = [c for c in cols_to_show if c in df.columns]
+            
+            # Display the data
             st.dataframe(df[valid_cols], width=1000) 
+
+            # --- THE EXPORT FEATURE ---
+            st.markdown("---")
+            csv = df[valid_cols].to_csv(index=False).encode('utf-8')
+            
+            st.download_button(
+                label="🩸 Export Evidence (CSV)",
+                data=csv,
+                file_name=f"forensic_report_{datetime.date.today()}.csv",
+                mime="text/csv",
+                help="Download your booking history for forensic analysis."
+            )
         else:
-            st.info("You have no bookings yet.")
+            st.info("No evidence found in the logs.")
 
     elif page == "Admin Panel":
         # Double check role here for security

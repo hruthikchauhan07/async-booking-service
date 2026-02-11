@@ -188,16 +188,25 @@ if not st.session_state.token:
 else:
     # 🏠 DASHBOARD SCREEN
     with st.sidebar:
-        # This replaces the broken image/icon line
         st.markdown("<h1 style='text-align: center;'>🩸</h1>", unsafe_allow_html=True)
         st.title("Navigation")
         
-        # DYNAMIC MENU: Only show Admin Panel if user is Admin
+        # DYNAMIC MENU
         options = ["Book a Room", "My Bookings"]
         if st.session_state.is_admin:
             options.append("Admin Panel")
             
         page = st.radio("Go to", options)
+        
+        # Push the logout button to the bottom
+        st.markdown("<br><br>", unsafe_allow_html=True) 
+        st.markdown("---")
+        
+        # The Logout Button (Available to everyone)
+        if st.button("🚪 Leave the Lab (Logout)", use_container_width=True):
+            st.session_state.token = None
+            st.session_state.is_admin = False
+            st.rerun()
 
     if page == "Book a Room":
         st.title("📅 Book a Resource")

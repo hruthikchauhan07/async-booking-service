@@ -24,7 +24,7 @@ st.markdown("""
         border: 1px solid #ff0000;
     }
     </style>
-    """, unsafe_allow_stdio=True)
+    """, unsafe_allow_html=True) # Changed from _stdio to _html
 
 # --- HELPER FUNCTIONS ---
 def get_headers():

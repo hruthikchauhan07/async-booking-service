@@ -25,7 +25,7 @@ target_metadata = Base.metadata
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode."""
     # FIX 1: Use settings.DATABASE_URL
-    url = settings.DATABASE_URL
+    url = settings.ASYNC_DATABASE_URL
     
     context.configure(
         url=url,

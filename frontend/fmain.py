@@ -188,7 +188,7 @@ if not st.session_state.token:
 else:
     # 🏠 DASHBOARD SCREEN
     with st.sidebar:
-        st.title("Navigation"):
+        st.title("Navigation")
         st.sidebar.image("https://img.icons8.com/ios-filled/100/8b0000/blood-drop.png", width=50)
         
         # DYNAMIC MENU: Only show Admin Panel if user is Admin

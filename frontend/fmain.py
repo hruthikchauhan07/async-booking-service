@@ -188,8 +188,9 @@ if not st.session_state.token:
 else:
     # 🏠 DASHBOARD SCREEN
     with st.sidebar:
+        # This replaces the broken image/icon line
+        st.markdown("<h1 style='text-align: center;'>🩸</h1>", unsafe_allow_html=True)
         st.title("Navigation")
-        st.sidebar.image("https://img.icons8.com/ios-filled/100/8b0000/blood-drop.png", width=50)
         
         # DYNAMIC MENU: Only show Admin Panel if user is Admin
         options = ["Book a Room", "My Bookings"]
@@ -197,12 +198,6 @@ else:
             options.append("Admin Panel")
             
         page = st.radio("Go to", options)
-        
-        st.markdown("---")
-        if st.button("Logout"):
-            st.session_state.token = None
-            st.session_state.is_admin = False
-            st.rerun()
 
     if page == "Book a Room":
         st.title("📅 Book a Resource")

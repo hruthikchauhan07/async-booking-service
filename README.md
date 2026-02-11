@@ -109,6 +109,7 @@ By default, new users are **Standard Users**. To promote yourself to **Admin**:
 ├── alembic/            # Database Migrations
 ├── docker-compose.yml  # Container Orchestration
 └── Dockerfile          # Backend Image Build
+```
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

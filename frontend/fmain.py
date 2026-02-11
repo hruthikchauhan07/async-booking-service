@@ -4,7 +4,7 @@ import datetime
 import pandas as pd
 
 # --- CONFIGURATION ---
-API_URL = "http://localhost:8000/api/v1"
+API_URL = "https://bookit-api-naxn.onrender.com/api/v1"
 st.set_page_config(page_title="Booking System", page_icon="📅", layout="wide")
 
 # --- HELPER FUNCTIONS ---

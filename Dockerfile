@@ -25,4 +25,5 @@ COPY . .
 EXPOSE 8000
 
 # 8. Command to run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# This runs the migration, then starts the server
+CMD alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT

@@ -6,6 +6,25 @@ import pandas as pd
 # --- CONFIGURATION ---
 API_URL = "https://bookit-api-naxn.onrender.com/api/v1"
 st.set_page_config(page_title="Booking System", page_icon="📅", layout="wide")
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #0e1117;
+        color: #e0e0e0;
+    }
+    /* Change sidebar to a dark blood red */
+    [data-testid="stSidebar"] {
+        background-color: #4a0404;
+    }
+    /* Style buttons to look like lab controls */
+    .stButton>button {
+        color: white;
+        background-color: #8b0000;
+        border-radius: 5px;
+        border: 1px solid #ff0000;
+    }
+    </style>
+    """, unsafe_allow_stdio=True)
 
 # --- HELPER FUNCTIONS ---
 def get_headers():

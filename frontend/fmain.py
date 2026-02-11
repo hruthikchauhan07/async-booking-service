@@ -8,23 +8,52 @@ API_URL = "https://bookit-api-naxn.onrender.com/api/v1"
 st.set_page_config(page_title="Booking System", page_icon="📅", layout="wide")
 st.markdown("""
     <style>
+    /* Main Background */
     .stApp {
-        background-color: #0e1117;
-        color: #e0e0e0;
+        background-color: #050505;
+        color: #d1d1d1;
     }
-    /* Change sidebar to a dark blood red */
+    
+    /* The Red Sidebar */
     [data-testid="stSidebar"] {
-        background-color: #4a0404;
+        background-image: linear-gradient(#4a0404, #1a0202);
+        border-right: 2px solid #8b0000;
     }
-    /* Style buttons to look like lab controls */
+    
+    /* Lab-style Header */
+    h1, h2, h3 {
+        color: #ff4b4b !important;
+        font-family: 'Courier New', Courier, monospace;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    /* Buttons that look like Emergency Kill-Switches */
     .stButton>button {
-        color: white;
+        color: #ffffff;
         background-color: #8b0000;
-        border-radius: 5px;
-        border: 1px solid #ff0000;
+        border: 2px solid #ff0000;
+        border-radius: 0px; /* Sharp edges for a clinical look */
+        padding: 10px 24px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .stButton>button:hover {
+        background-color: #ff0000;
+        border-color: #ffffff;
+        color: black;
+        box-shadow: 0 0 15px #ff0000;
+    }
+
+    /* Input box styling */
+    .stTextInput>div>div>input {
+        background-color: #1a1a1a;
+        color: #ff4b4b;
+        border: 1px solid #4a0404;
     }
     </style>
-    """, unsafe_allow_html=True) # Changed from _stdio to _html
+    """, unsafe_allow_html=True)
 
 # --- HELPER FUNCTIONS ---
 def get_headers():
